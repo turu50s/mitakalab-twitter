@@ -4,9 +4,16 @@ class UsersController < ApplicationController
 
   def show
     @user = Hash.new
-    @user[:name] = "Shigeru Tsuruki" 
-    @user[:username] = "Turu"
-    @user[:location] = "Chiba Japan"
-    @user[:about] = "Hello, I am Turu."
+    if params[:username] == 'ryooopan'
+      @user[:name] = "Ryo Suzuki" 
+      @user[:username] = "Ryooopan"
+      @user[:location] = "Kanagawa Japan"
+      @user[:about] = "Hello, I am Ryo."
+    elsif params[:username] == 'moyahima'
+      @user[:name] = "Shohei Aoki" 
+      @user[:username] = "moyahima"
+      @user[:location] = "Tottori Japan"
+      @user[:about] = "Nice to meet you."
+    end
   end
 end
